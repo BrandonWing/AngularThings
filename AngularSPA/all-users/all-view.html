@@ -17,9 +17,9 @@
                 <td>{{ u.userId }}</td>
                 <td>{{ u.firstname }}</td>
                 <td>{{ u.lastname }}</td>
-                <td>{{ u.email | uppercase }}</td>
+                <td>{{ u.email | uppercase | limitTo:10 }}</td>
                 <td>{{ u.username }}</td>
-                <td>{{ u.password }}</td>
+                <td>{{ u.password | limitTo:3 }}</td>
             </tr>
         </tbody>
     </table>

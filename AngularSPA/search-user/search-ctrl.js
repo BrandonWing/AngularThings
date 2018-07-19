@@ -2,10 +2,10 @@
  * GET http://192.168.61.182:8084/users/{id} (get one)
  */
 // usually one controller per page
-angular.module('pickle-app').controller('get-one-ctrl', function($scope, $http) {
+angular.module('pickle-app').controller('get-one-ctrl', function($scope, dataService) {
 	$scope.goFetchUser = function() {
-		var url = 'http://192.168.61.182:8084/users/' + $scope.searchValue;
-		$http.get(url).then(function(response) {
+		dataService.getUser($scope.searchValue)
+		.then(function(response) {
 			$scope.foundUser = response.data;
 		});
 	};

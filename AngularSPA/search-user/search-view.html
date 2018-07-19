@@ -2,8 +2,9 @@
     <h1>Find User By Id</h1>
     <form action="#!/search" ng-submit="goFetchUser()" class="form-inline">
         Id:
-        <input type="text" ng-model="searchValue" class="form-control"/>
-        <input type="submit" value="Find" class="btn" />
+        <input type="text" class="form-control" ng-model="searchValue" />
+        <br/> <br/>
+        <input type="submit" class="btn" value="Find" />
     </form>
     <div ng-if="foundUser">
         <h2>Id : {{ foundUser.userId }} | Name : {{ foundUser.firstname }}</h2>

@@ -23,18 +23,19 @@ angular.module('pickle-app').config( function($routeProvider){
 });
 
 angular.module('pickle-app').service('dataService', ['$http', function($http){
+    
     let urlBase = "http://192.168.61.182:8084/users";
-    this.getUsers = function() {
+    this.getUsers = function(){
         return $http.get(urlBase);
+    };
+
+    this.getUser = function(id){
+        return $http.get(urlBase+"/"+id);
     }
 
-    this.getUser = function(id) {
-        return $http.get(urlBase + "/" + id)
-    }
-
-    this.addUser = function(u) {
+    this.addUser = function(u){
         return $http.post(urlBase, u);
     }
 
 
-}]);
+}])
